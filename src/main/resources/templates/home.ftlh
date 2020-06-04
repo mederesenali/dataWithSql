@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <style>
-        body{
-            background-color: gray;
-        }
-    </style>
-    <meta charset="UTF-8">
-    <title>Books</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"></head>
-<body>
-<div class="container">
+<#import "partials/main.ftlh" as main />
+
+<@main.renderWith>
 
 <nav class="navbar navbar-light bg-light">
 <ul class="navbar-nav">
@@ -29,19 +19,19 @@
             <th scope="col">price</th>
         </tr>
         </thead>
-        <tbody>
 
+        <tbody>
         <#list books as b>
-        <tr>
+       <tr  onclick="window.location='/book/${b.id}'" class="pointer">
             <th scope="row">${b.id}</th>
             <td>${b.author}</td>
             <td>${b.name}</td>
             <td>${b.price}</td>
         </tr>
+
         </#list>
         </tbody>
+
     </table>
 
-</div>
-</body>
-</html>
+</@main.renderWith>

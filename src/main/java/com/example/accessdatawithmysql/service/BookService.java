@@ -30,7 +30,7 @@ public class BookService  {
    }
 
 
-    public Optional<Book> updateBook(Integer id) {
+    public Optional<Book> findBookById(Integer id) {
         return bookReposiotory.findById(id);
     }
 }
